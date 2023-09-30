@@ -1,0 +1,63 @@
+<!-- Dynamic File -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello EJS Template Engine</h1>
+    <!-- <%= 'var' %> => call data to show -->
+    <p><b>Name: </b><%= name %></p>                     
+    <p><b>Age: </b><%= age %> <b>years.</b></p>       
+    <!-- <%- 'var' %> => call data in html form to show  -->
+    <p><%- address %></p>
+    <hr>
+    <h3> if else</h3>
+    <% if(age>=18){%>
+        <h2>Access Passed</h2>
+    <%} else {%>
+        <h2>Access Denied</h2>
+    <% } %>
+    
+    <hr>
+    <h3> For Loop </h3>
+    <% for(i=1;i<=10;i++) {%>
+        <p>Number <%= i %></p>
+    <% } %>
+
+    <hr>
+    <h3> Array </h3>
+    <p><%= groups %></p>
+    <p><%= groups[0] %></p>
+    <p><%= groups[1] %></p>
+    <p> ///////////////////////// </p>
+    <% for(i=0;i<groups.length;i++) {%>
+        <p><%= groups[i] %></p>
+    <% } %>
+    <hr>
+    <h><%= groups %></h>
+    <ol>
+        <% for(i=0;i<groups.length;i++) {%>
+            <li><%= groups[i] %></li>
+        <% } %>
+    </ol>
+
+    <ol>
+        <% for(index in groups) {%>
+            <li><%= groups[index] %></li>
+        <% } %>
+    </ol>
+    <hr>
+    <h3> Object </h3>
+    <p><%= products %></p>
+    <hr>
+    <% Object.values(products).forEach(function(item){%>
+        <img src="<%= item.image %>" alt="">
+        <p>Name: <%= item.name %></p>
+        <p>Price: <%= item.price %></p>
+        <hr>
+    <% }) %>
+</body>
+</html>

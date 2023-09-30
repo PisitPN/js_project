@@ -1,0 +1,47 @@
+สวัสดี Node.js
+    <!-- <%= 'var' %> => call data to show -->
+    <p><b>Name: </b><%= name %></p>                     
+    <p><b>Age: </b><%= age %> <b>years.</b></p>       
+    <!-- <%- 'var' %> => call data in html form to show  -->
+    <p><%- address %></p>
+    
+    <hr>
+    
+    <% if(age>=18){%>
+        <h2>Access Passed</h2>
+    <%} else {%>
+        <h2>Access Denied</h2>
+    <% } %>
+    
+    <hr>
+    <% for(i=1;i<=10;i++) {%>
+        <p>Number <%= i %></p>
+    <% } %>
+
+    <hr>
+
+    <p><%= groups %></p>
+    <p><%= groups[0] %></p>
+    <p><%= groups[1] %></p>
+    <p> ///////////////////////// </p>
+    <% for(i=0;i<groups.length;i++) {%>
+        <p><%= groups[i] %></p>
+    <% } %>
+    <hr>
+    <p><%= groups %></p>
+    <ol>
+        <% for(i=0;i<groups.length;i++) {%>
+            <li><%= groups[i] %></li>
+        <% } %>
+    </ol>
+
+    <ol>
+        <% for(index in groups) {%>
+            <li><%= groups[index] %></li>
+        <% } %>
+    </ol>
+
+    <p><%= products %></p>
+    <% object.values(products).forEach(fucntion(item){%>
+        <p>Name: <%= item.name %></p>
+    <% }) %>
