@@ -83,6 +83,14 @@ router.get('/manage',async (req,res)=>{
     
 })
 
+router.get('/login-page',(req,res)=>{
+    if(req.session.login){
+        res.render('form.ejs')
+    }else{
+    res.render('admin.ejs')
+    }
+})
+
 router.get('/logout',(req,res)=>{                  //.post => ส่งค่าแบบมองไม่เห็นในurl ปลอดภัยกว่า ใช้คู่กับreq.body
     //cookie-ver
     // res.clearCookie('username')
